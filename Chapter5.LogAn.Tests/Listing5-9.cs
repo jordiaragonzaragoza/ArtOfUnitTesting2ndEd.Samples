@@ -1,9 +1,8 @@
-﻿using System;
-using Chapter5.LogAn;
-using NSubstitute;
+﻿using NSubstitute;
 using NUnit.Framework;
+using System;
 
-namespace NSubExamples
+namespace Chapter5.LogAn.Tests
 {
     class Presenter
     {

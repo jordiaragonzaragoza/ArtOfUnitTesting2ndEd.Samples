@@ -1,6 +1,6 @@
 ﻿using Chapter5.LogAn;
 
-namespace NSubExamples
+namespace Chapter5.LogAn.Tests
 {
     public class FakeWebService : IWebService
     {

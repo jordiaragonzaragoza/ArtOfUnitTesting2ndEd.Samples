@@ -1,7 +1,6 @@
-﻿using Chapter5.LogAn;
-using System;
+﻿using System;
 
-namespace NSubExamples
+namespace Chapter5.LogAn.Tests
 {
     public class FakeLogger: ILogger
     {

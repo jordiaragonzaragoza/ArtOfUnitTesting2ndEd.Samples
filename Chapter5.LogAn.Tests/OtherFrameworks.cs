@@ -1,10 +1,7 @@
-﻿using System;
-using Chapter5.LogAn;
-using Moq;
-using NSubstitute;
+﻿using Moq;
 using NUnit.Framework;
 
-namespace NSubExamples
+namespace Chapter5.LogAn.Tests
 {
     [TestFixture]
     public class OtherFrameworks

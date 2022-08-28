@@ -1,7 +1,6 @@
-﻿using Chapter5.LogAn;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 
-namespace NSubExamples
+namespace Chapter5.LogAn.Tests
 {
     /// <summary>
     /// Asserting against a handwritten fake object.
