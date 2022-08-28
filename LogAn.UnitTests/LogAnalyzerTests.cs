@@ -88,7 +88,7 @@
         [Test]
         public void IsValidLogFileName_WhenCalled_ChangesWasLastFileNameValid()
         {
-            LogAnalyzer la = new LogAnalyzer();
+            var la = new LogAnalyzer();
 
             la.IsValidLogFileName("badname.slf");
 
@@ -100,7 +100,7 @@
         [TestCase("goodfile.slf", true)]
         public void IsValidLogFileName_WhenCalled_ChangesWasLastFileNameValid(string file, bool expected)
         {
-            LogAnalyzer la = new LogAnalyzer();
+            var la = new LogAnalyzer();
 
             la.IsValidLogFileName(file);
 
