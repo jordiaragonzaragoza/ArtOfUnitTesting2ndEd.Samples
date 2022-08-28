@@ -2,16 +2,17 @@
 {
     public class TestableLogAnalyzerUsingFactoryMethod : LogAnalyzerUsingFactoryMethod
     {
+        private IExtensionManager manager;
+
         public TestableLogAnalyzerUsingFactoryMethod(IExtensionManager mgr)
         {
-            Manager = mgr;
+            manager = mgr;
         }
 
-        public IExtensionManager Manager;
         
         protected override IExtensionManager GetManager()
         {
-            return Manager;
+            return manager;
         }
     }
 }

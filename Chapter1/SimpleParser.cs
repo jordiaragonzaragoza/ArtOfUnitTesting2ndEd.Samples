@@ -5,7 +5,7 @@ namespace Chapter1
 {
     public class SimpleParser
     {
-        public int ParseAndSum(string numbers)
+        public static int ParseAndSum(string numbers)
         {
             if (numbers.Length == 0)
             {
@@ -29,11 +29,9 @@ namespace Chapter1
         {
             try
             {
-                SimpleParser p = new SimpleParser();
-                int result = p.ParseAndSum(string.Empty);
+                int result = SimpleParser.ParseAndSum(string.Empty);
                 if (result != 0)
                 {
-
                     Console.WriteLine(
                         @"***SimpleParserTests.TestReturnsZeroWhenEmptyString: 
 -------
@@ -68,7 +66,7 @@ Parse and sum should have returned 0 on an empty string");
             try
             {
                 SimpleParser p = new SimpleParser();
-                int result = p.ParseAndSum(string.Empty);
+                int result = SimpleParser.ParseAndSum(string.Empty);
                 if (result != 0)
                 {
                     //Calling the helper method
@@ -81,6 +79,5 @@ Parse and sum should have returned 0 on an empty string");
                 TestUtil.ShowProblem(testName, e.ToString());
             }
         }
-
     }
 }

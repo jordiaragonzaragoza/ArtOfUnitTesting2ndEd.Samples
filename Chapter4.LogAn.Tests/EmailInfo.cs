@@ -9,10 +9,10 @@
             Body = body;
         }
 
-        public string Body { get; set; }
+        public string Body { get;  private init; }
 
-        public string To { get; set; }
+        public string To { get; private init; }
         
-        public string Subject { get; set; }
+        public string Subject { get; private init; }
     }
 }
