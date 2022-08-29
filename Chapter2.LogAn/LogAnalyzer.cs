@@ -1,4 +1,4 @@
-﻿namespace LogAn
+﻿namespace Chapter2.LogAn
 {
     public class LogAnalyzer
     {

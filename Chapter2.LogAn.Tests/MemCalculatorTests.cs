@@ -1,6 +1,6 @@
 ﻿using NUnit.Framework;
 
-namespace LogAn.UnitTests
+namespace Chapter2.LogAn.Tests
 {
     [TestFixture]
     public class MemCalculatorTests

@@ -1,4 +1,4 @@
-﻿namespace LogAn.UnitTests
+﻿namespace Chapter2.LogAn.Tests
 {
     using System;
     using NUnit.Framework;
