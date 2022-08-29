@@ -38,7 +38,7 @@ namespace Chapter4.LogAn.Tests
             // it would be a good indication to you to break this test into multiple tests.
             StringAssert.Contains("someone@somewhere.com", mockEmail.To);
             StringAssert.Contains("fake exception", mockEmail.Body);
-            StringAssert.Contains("can’t log", mockEmail.Subject);
+            StringAssert.Contains("can't log", mockEmail.Subject);
         }
 
         [Test]
@@ -48,14 +48,14 @@ namespace Chapter4.LogAn.Tests
             {
                 ToThrow = new Exception("fake exception")
             };
-            var expectedEmail = new EmailInfo("someone@somewhere.com", "can’t log", "fake exception");
+            var expectedEmail = new EmailInfo("someone@somewhere.com", "can't log", "fake exception");
             var mockEmail = new FakeEmailServiceUsingEmailInfo()
             {
                 EmailInfo = expectedEmail,
             };
             var log = new LogAnalyzer(stubService, mockEmail);
             string tooShortFileName = "abc.ext";
-            
+
 
             log.Analyze(tooShortFileName);
 

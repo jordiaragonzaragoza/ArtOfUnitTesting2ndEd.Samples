@@ -23,7 +23,7 @@ namespace Chapter4.LogAn
                 }
                 catch (Exception e)
                 {
-                    emailService.SendEmail("someone@somewhere.com", "can’t log", e.Message);
+                    emailService.SendEmail("someone@somewhere.com", "can't log", e.Message);
                 }
             }
         }
