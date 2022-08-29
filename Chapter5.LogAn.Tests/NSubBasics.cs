@@ -40,7 +40,7 @@ namespace Chapter5.LogAn.Tests
             IFileNameRules fakeRules = Substitute.For<IFileNameRules>();
 
             fakeRules.IsValidLogFileName(Arg.Any<string>()).Returns(true);
-              
+
             Assert.That(fakeRules.IsValidLogFileName("anything, really!"), Is.True);
         }
 
@@ -60,15 +60,15 @@ namespace Chapter5.LogAn.Tests
             Assert.Throws<Exception>(() => fakeRules.IsValidLogFileName("anything"));
 
         }
-       
+
         [Test]
         public void RecursiveFakes_work()
         {
             IPerson person = Substitute.For<IPerson>();
 
-            Assert.IsNotNull(person.GetManager());
-            Assert.IsNotNull(person.GetManager().GetManager());
-            Assert.IsNotNull(person.GetManager().GetManager().GetManager());
+            Assert.That(person.GetManager(), Is.Not.Null);
+            Assert.That(person.GetManager().GetManager(), Is.Not.Null);
+            Assert.That(person.GetManager().GetManager().GetManager(), Is.Not.Null);
         }
 
         public interface IPerson
