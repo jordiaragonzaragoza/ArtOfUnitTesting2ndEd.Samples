@@ -4,7 +4,7 @@ using NUnit.Framework;
 namespace Chapter7.Tests.StringParserInheritedExampleTests
 {
     [TestFixture]
-    public class IISLogParserTests : FillInTheBlanksStringParserTests
+    public class IISLogParserTests : BaseFillInTheBlanksStringParserTests
     {
         protected override IStringParser GetParser(string input)
         {

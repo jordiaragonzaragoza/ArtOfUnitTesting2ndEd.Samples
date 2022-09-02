@@ -4,7 +4,7 @@ using NUnit.Framework;
 namespace Chapter7.Tests.StringParserInheritedExampleTests
 {
     [TestFixture]
-    public class StandardStringParserTests : FillInTheBlanksStringParserTests
+    public class StandardStringParserTests : BaseFillInTheBlanksStringParserTests
     {
         protected override string HeaderVersion_SingleDigit
         {
