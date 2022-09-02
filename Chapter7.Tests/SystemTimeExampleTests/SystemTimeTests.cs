@@ -10,11 +10,13 @@ namespace Chapter7.Tests.SystemTimeExampleTests
         [Test]
         public void SettingSystemTime_Always_ChangesTime()
         {
-            SystemTime.Set(new DateTime(2000, 1, 1));
+            var dateTime = new DateTime(2000, 1, 1);
+            SystemTime.Set(dateTime);
+            var expectedTime = dateTime.ToShortDateString();
 
             string output = TimeLogger.CreateMessage("a");
 
-            StringAssert.Contains("01/01/2000", output);
+            StringAssert.Contains(expectedTime, output);
         }
 
         [TearDown]

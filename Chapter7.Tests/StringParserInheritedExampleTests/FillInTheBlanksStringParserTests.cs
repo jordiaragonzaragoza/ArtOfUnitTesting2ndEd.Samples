@@ -22,7 +22,7 @@ namespace Chapter7.Tests.StringParserInheritedExampleTests
             IStringParser parser = GetParser(input);
 
             string versionFromHeader = parser.GetStringVersionFromHeader();
-            
+
             Assert.That(versionFromHeader, Is.EqualTo(EXPECTED_SINGLE_DIGIT));
         }
 
@@ -34,7 +34,7 @@ namespace Chapter7.Tests.StringParserInheritedExampleTests
             IStringParser parser = GetParser(input);
 
             string versionFromHeader = parser.GetStringVersionFromHeader();
-            
+
             Assert.That(versionFromHeader, Is.EqualTo(EXPECTED_WITH_MINORVERSION));
         }
 
@@ -45,7 +45,7 @@ namespace Chapter7.Tests.StringParserInheritedExampleTests
             IStringParser parser = GetParser(input);
 
             string versionFromHeader = parser.GetStringVersionFromHeader();
-            
+
             Assert.That(versionFromHeader, Is.EqualTo(EXPECTED_WITH_REVISION));
         }
 
@@ -53,13 +53,13 @@ namespace Chapter7.Tests.StringParserInheritedExampleTests
 
     //An example of the same idea using Generics
     public abstract class GenericParserTests<T>
-        where T:IStringParser
+        where T : IStringParser
     {
         protected abstract string GetInputHeaderSingleDigit();
 
         protected T GetParser(string input)
         {
-            return (T) Activator.CreateInstance(typeof (T), input);
+            return (T)Activator.CreateInstance(typeof(T), input);
         }
 
         [Test]
@@ -69,18 +69,17 @@ namespace Chapter7.Tests.StringParserInheritedExampleTests
             T parser = GetParser(input);
 
             bool result = parser.HasCorrectHeader();
-            
+
             Assert.That(result, Is.False);
         }
 
 
         //more tests
         //...
-   }
+    }
     //AN example of a test inheriting from a Generic Base Class
     [TestFixture]
-    public class StandardParserGenericTests
-                        :GenericParserTests<StandardStringParser>
+    public class StandardParserGenericTests : GenericParserTests<StandardStringParser>
     {
         protected override string GetInputHeaderSingleDigit()
         {

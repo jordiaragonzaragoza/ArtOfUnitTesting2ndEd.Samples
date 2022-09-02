@@ -16,7 +16,7 @@
             bool result = analyzer.IsValidLogFileName("filewithbadextension.foo");
 
             // Assert
-            Assert.False(result);
+            Assert.That(result, Is.False);
         }
 
         [Test]

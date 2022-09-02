@@ -14,7 +14,7 @@ namespace Chapter7.Tests.StringParserTemplateExampleTests
         [Test]
         public override void TestGetStringVersionFromHeader_SingleDigit_Found()
         {
-            IStringParser parser = GetParser("<Header>1</Header>");
+            IStringParser parser = GetParser("<Header><Version>1<Version></Header>");
 
             string versionFromHeader = parser.GetStringVersionFromHeader();
             Assert.That(versionFromHeader, Is.EqualTo("1"));
@@ -23,7 +23,7 @@ namespace Chapter7.Tests.StringParserTemplateExampleTests
         [Test]
         public override void TestGetStringVersionFromHeader_WithMinorVersion_Found()
         {
-            IStringParser parser = GetParser("<Header>1.1</Header>");
+            IStringParser parser = GetParser("<Header><Version>1.1<Version></Header>");
 
             string versionFromHeader = parser.GetStringVersionFromHeader();
 
@@ -33,7 +33,7 @@ namespace Chapter7.Tests.StringParserTemplateExampleTests
         [Test]
         public override void TestGetStringVersionFromHeader_WithRevision_Found()
         {
-            IStringParser parser = GetParser("<Header>1.1.1</Header>");
+            IStringParser parser = GetParser("<Header><Version>1.1.1<Version></Header>");
 
             string versionFromHeader = parser.GetStringVersionFromHeader();
 

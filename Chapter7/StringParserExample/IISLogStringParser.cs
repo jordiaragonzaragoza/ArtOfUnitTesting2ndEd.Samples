@@ -3,20 +3,23 @@
     public class IISLogStringParser : BaseStringParser
     {
         public IISLogStringParser(string toParse)
-            : base(toParse) 
+            : base(toParse)
         {
         }
 
         public override bool HasCorrectHeader()
         {
-            //missing here: real implementation
+            if (!string.IsNullOrEmpty(BaseStringParser.GetBetween(this.StringToParse, "header;version=", ";\n")))
+            {
+                return true;
+            }
+
             return false;
         }
 
         public override string GetStringVersionFromHeader()
         {
-            //missing here: real implementation
-            return string.Empty;
+            return BaseStringParser.GetBetween(this.StringToParse, "header;version=", ";\n");
         }
     }
 }

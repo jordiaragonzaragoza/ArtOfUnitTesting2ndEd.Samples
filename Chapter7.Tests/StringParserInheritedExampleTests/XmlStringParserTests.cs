@@ -1,16 +1,16 @@
-using Chapter7.StringParserExample;
+﻿using Chapter7.StringParserExample;
 using NUnit.Framework;
 
 namespace Chapter7.Tests.StringParserInheritedExampleTests
 {
     [TestFixture]
-    public class StandardStringParserTests : FillInTheBlanksStringParserTests
+    public class XMLStringParserTests : FillInTheBlanksStringParserTests
     {
         protected override string HeaderVersion_SingleDigit
         {
             get
             {
-                return string.Format("header\tversion={0}\t\n", EXPECTED_SINGLE_DIGIT);
+                return string.Format("<Header><Version>{0}<Version></Header>", EXPECTED_SINGLE_DIGIT);
             }
         }
 
@@ -18,7 +18,7 @@ namespace Chapter7.Tests.StringParserInheritedExampleTests
         {
             get
             {
-                return string.Format("header\tversion={0}\t\n", EXPECTED_WITH_MINORVERSION);
+                return string.Format("<Header><Version>{0}<Version></Header>", EXPECTED_WITH_MINORVERSION); ;
             }
         }
 
@@ -26,13 +26,13 @@ namespace Chapter7.Tests.StringParserInheritedExampleTests
         {
             get
             {
-                return string.Format("header\tversion={0}\t\n", EXPECTED_WITH_REVISION);
+                return string.Format("<Header><Version>{0}<Version></Header>", EXPECTED_WITH_REVISION);
             }
         }
 
         protected override IStringParser GetParser(string input)
         {
-            return new StandardStringParser(input);
+            return new XMLStringParser(input);
         }
     }
 }
